@@ -3,8 +3,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="UTF-8">
 		<title>Bootstrap Demo</title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<link rel="icon" href="images/logo.jpg">
@@ -12,16 +11,37 @@
 			.navbar-brand{
 				padding: 5px;
 			}
-			.item{
-				text-align: center;
-				height: 87%;
-			}
 			.carousel{
 				margin-top: 0px;
-				margin-bottom: 20px;
+				text-align: center;
 			}
-			.fill{
-				height: 90%;
+			@media screen and (min-width: 992px) {
+				.carousel-caption {
+					margin: 0 auto;
+					height: 300px;
+				}
+				.fill{
+					height: auto;
+				}
+			}
+			@media(max-width: 991px) {
+				h1 {
+					font-size: 12pt;
+				}
+				.row{
+					display:flex;
+					align-items: center;
+					height:80%;
+					background-color:lightgray;
+				}
+				.fill{
+					height: 100%;
+					margin: 0 !important;
+					padding: 19px;
+				}
+			}
+			.well {
+				margin-top: 20px;
 			}
 		</style>
 	</head>
@@ -36,7 +56,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">
+					<a class="navbar-brand" href="index.html">
 						<img alt="Logo" src="images/logo.jpg" width="40px"/>
 					</a>
 				</div>
@@ -52,7 +72,7 @@
 		<div class="container-fluid">
 		<div class="row">
 		<!-- Carousel -->
-		<div id="carousel1" class="carousel slide col-xs-7 col-md-12" data-interval="3000" data-ride="carousel" height="87%">
+		<div id="carousel1" class="carousel slide col-xs-7 col-md-12" data-interval="3000" data-ride="carousel">
 			<!-- Carousel indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#carousel1" data-slide-to="0" class="active"></li>
@@ -61,13 +81,12 @@
 			</ol>   
 		   <!-- Carousel items -->
 			<div class="carousel-inner">
-				<div class="active item">
+				<div class="item active">
 					<img class="first-slide" src="images/1.jpg"/>
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>Slide 1</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							<p><a class="btn btn-lg btn-primary" href="#form1" role="button">Sign up today</a></p>
+							<h1>When the screen width is smaller than 992 pixels..</h1>
+							<p><a class="btn btn-primary btn-lg btn-responsive" href="#form1" role="button">Sign up today</a></p>
 						</div>
 					</div>
 				</div>
@@ -75,9 +94,8 @@
 					<img class="second-slide" src="images/2.jpg"/>
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>Slide 2</h1>
-							<p>Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
-							<p><a class="btn btn-lg btn-primary" href="#form1" role="button">Sign up today</a></p>
+							<h1>..The layout for small devices is used..</h1>
+							<p><a class="btn btn-primary btn-lg btn-responsive" href="#form1" role="button">Sign up today</a></p>
 						</div>
 					</div>
 				</div>
@@ -85,9 +103,8 @@
 					<img class="third-slide" src="images/3.jpg"/>
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>Slide 3</h1>
-							<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-							<p><a class="btn btn-lg btn-primary" href="#form1" role="button">Sign up today</a></p>
+							<h1>..And you shall now see the signup form on the right</h1>
+							<p><a class="btn btn-primary btn-lg btn-responsive" href="#form1" role="button">Sign up today</a></p>
 						</div>
 					</div>
 				</div>
@@ -102,7 +119,7 @@
 		</div>
 		
 		<!-- Signup form -->
-		<div class="container fill col-xs-5 col-md-12" id="form1" style="background-color:lavenderblush;">
+		<div class="container fill col-xs-5 col-md-12" id="form1" style="background-color:lightgray">
 			<div class="well col-lg-4 col-lg-offset-4 col-sm-12 fill">
 				<form>
 					<h2>Sign Up Form</h2>
